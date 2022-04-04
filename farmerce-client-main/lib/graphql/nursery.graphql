@@ -1,0 +1,24 @@
+query ShopList{
+    shop{
+        nursery{
+            photo #leading
+            name #title
+            infrastructure #subtitle (shade net/ polyhouse/open land)
+            acreage #subtitle 2
+        }
+    }
+}
+mutation CreateShop($name:String!,$infrastructure:InfrastructureEnum!){
+    nurseryCreate(
+        name: $name,
+        infrastructure: $infrastructure,
+
+    ){
+        nursery{
+            photo #leading
+            name #title
+            infrastructure #subtitle (shade net/ polyhouse/open land)
+            acreage #subtitle 2
+        }
+    }
+}

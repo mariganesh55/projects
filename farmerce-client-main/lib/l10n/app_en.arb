@@ -1,0 +1,69 @@
+{
+  "hi": "Hi, {name}",
+  "@hi": {
+    "description": "hi to a name",
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "resendOTP": "Resend OTP",
+  "@resendOTP": {
+    "description": "btn on login page"
+  },
+  "sendOTP": "Send OTP",
+  "@sendOTP": {
+    "description": "Send OTP"
+  },
+  "didNotReceiveOTP": "Didn't receive OTP?",
+  "@didNotReceiveOTP": {
+    "description": "Didn't receive OTP?"
+  },
+  "callForHelp": "Call for Help",
+  "@callForHelp": {
+    "description": "Call for Help"
+  },
+  "mobileNumber": "Mobile Number",
+  "@mobileHint": {
+    "description": "label on login page"
+  },
+  "loginWithTrueCaller": "Login with True Caller",
+  "@loginWithTrueCaller": {
+    "description": "label on login page"
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "label on login page"
+  },
+  "signUpTo": "Sign Up To Farmerce",
+  "@signUpTo": {
+    "description": "label for OTP Page App Bar"
+  },
+  "enterOTP": "Enter Your 4 digit OTP",
+  "@enterOTP": {
+    "description": "label for OTP Page App Bar"
+  },
+  "submit": "Submit",
+  "@submit": {
+    "description": "btn text for submit"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "retry text button when error is thrown"
+  },
+  "somethingWentWrong": "Something went wrong",
+  "@somethingWentWrong": {
+    "description": "general simple error message for the user."
+  },
+  "error": "Error",
+  "@error": {
+    "description": "general simple error title"
+  },
+  "nameOfNursery": "Name of Nursery",
+  "@nameOfNursery": {
+    "description": "Name field in create nursery form"
+  },
+  "cantBeEmpty": "Can't be Empty",
+  "@cantBeEmpty": {
+    "description": "can't allow empty validators"
+  }
+}

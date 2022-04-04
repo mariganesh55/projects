@@ -1,0 +1,43 @@
+targets:
+  $default:
+    builders:
+      gql_build|schema_builder:
+        enabled: true
+      gql_build|ast_builder:
+        enabled: true
+      gql_build|data_builder:
+        enabled: true
+        options:
+          schema: farmerce_client|lib/graphql/farmerce.schema.graphql
+      gql_build|var_builder:
+        enabled: true
+        options:
+          schema: farmerce_client|lib/graphql/farmerce.schema.graphql
+      gql_build|serializer_builder:
+        enabled: true
+        options:
+          schema: farmerce_client|lib/graphql/farmerce.schema.graphql
+      ferry_generator|req_builder:
+        enabled: true
+        options:
+          schema: farmerce_client|lib/graphql/farmerce.schema.graphql
+#targets:
+#  $default:
+#    sources:
+#      - lib/**
+#      - graphql/**
+#      - test/**
+#      - neoword.schema.graphql
+#    builders:
+#      artemis:
+#        options:
+#          schema_mapping:
+#            - schema: neoword.schema.graphql
+#              queries_glob: graphql/*.graphql
+#              output: lib/gen/graphql_api.graphql.dart
+##          custom_parser_import: 'package:neoword/coercers.dart'
+#          scalar_mapping:
+#            - graphql_type: GenericScalar
+#              dart_type: Map<String,String>
+##              use_custom_parser: true
+#          naming_scheme: simple

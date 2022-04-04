@@ -1,0 +1,11 @@
+query User{
+    userProfile {
+        user{
+            firstName,
+            lastName,
+            firebaseUid,
+        },
+        phoneNumber,
+        acreage,
+    }
+}

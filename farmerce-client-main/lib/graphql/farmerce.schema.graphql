@@ -1,0 +1,178 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type CreateNurseryMutation {
+  nursery: NurseryType
+}
+
+scalar DateTime
+
+scalar Decimal
+
+enum InfrastructureEnum {
+  shade_net_house
+  polyhouse
+  open_land
+}
+
+type InventoryLogCreate {
+  inventoryLog: InventoryLogType
+}
+
+type InventoryLogType {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  shopKey: ShopType!
+  startDate: DateTime!
+  endDate: DateTime!
+  qty: Int!
+  price: Decimal
+}
+
+type Mutation {
+  saplingSourceCreate(companyId: Int, name: String!, plantId: Int!): SaplingCreateMutation
+  inventoryLogCreate(endDate: DateTime, itemId: Int!, price: Decimal!, qty: Int!, shopId: Int!, startDate: DateTime): InventoryLogCreate
+  nurseryCreate(acreage: String, b2bAdvancePercentage: Int, infrastructure: InfrastructureEnum!, maxSaplingCapacity: Int, name: String!, photo: String): CreateNurseryMutation
+  nurseryUpdate(acreage: String, b2bAdvancePercentage: Int, id: Int!, infrastructure: InfrastructureEnum, maxSaplingCapacity: Int, name: String, photo: String): UpdateNurseryMutation
+  userProfileUpdate(acreage: Decimal, firstName: String, lastName: String): UserProfileMutation
+  userPhoto(photoUrl: String!): UserPhotoMutation
+}
+
+enum NurseryInfrastructure {
+  SHADE_NET_HOUSE
+  POLYHOUSE
+  OPEN_LAND
+}
+
+type NurseryType {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  photo: String
+  name: String!
+  shopPtr: ShopType!
+  acreage: Decimal
+  maxSaplingCapacity: Int
+  infrastructure: NurseryInfrastructure
+  b2bAdvancePercentage: Int
+}
+
+type Query {
+  shop: [ShopType]
+  userProfile: UserProfileType
+  upload(fileName: String!, ext: String!): UploadData
+}
+
+type SaplingCreateMutation {
+  saplingSource: SaplingSourceType
+}
+
+enum SaplingSourceColor {
+  GREEN
+  RED
+  YELLOW
+  ORANGE
+  PURPLE
+  BLUE
+  BROWN
+}
+
+enum SaplingSourceShape {
+  ROUND
+  LONG
+}
+
+type SaplingSourceType {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  photo: String
+  enteredBy: User
+  color: SaplingSourceColor
+  size: String
+  shape: SaplingSourceShape
+}
+
+type ShopAffiliateType {
+  id: ID!
+  isOwner: Boolean
+  isManager: Boolean
+  shopKey: ShopType!
+  userKey: User
+}
+
+type ShopType {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  photo: String
+  name: String!
+  shopAffiliates: [ShopAffiliateType!]!
+  nursery: NurseryType
+  inventorylogSet: [InventoryLogType!]!
+}
+
+type UpdateNurseryMutation {
+  nursery: NurseryType
+}
+
+type UploadData {
+  url: String
+  key: String
+  date: String
+  credential: String
+  policy: String
+  algorithm: String
+  signature: String
+}
+
+type User {
+  id: ID!
+  password: String!
+  lastLogin: DateTime
+  isSuperuser: Boolean!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  isStaff: Boolean!
+  isActive: Boolean!
+  dateJoined: DateTime!
+  firebaseUid: String
+  truecallerUid: String
+  userProfile: UserProfileType
+  shopAffiliates: [ShopAffiliateType!]!
+  saplingsourceSet: [SaplingSourceType!]!
+}
+
+type UserPhotoMutation {
+  userPhoto: UserPhotoType
+}
+
+type UserPhotoType {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  photo: String!
+  userProfileKey: UserProfileType!
+  isCurrent: Boolean!
+}
+
+type UserProfileMutation {
+  userProfile: UserProfileType
+}
+
+type UserProfileType {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User!
+  phoneNumber: String!
+  acreage: Decimal
+  userphotoSet: [UserPhotoType!]!
+  photo: String
+}

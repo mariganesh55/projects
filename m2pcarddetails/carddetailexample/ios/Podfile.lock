@@ -1,0 +1,49 @@
+PODS:
+  - CryptoSwift (1.4.0)
+  - Flutter (1.0.0)
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - local_auth (0.0.1):
+    - Flutter
+  - package_info (0.0.1):
+    - Flutter
+  - SwCrypt (5.1.3)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - CryptoSwift (~> 1.0)
+  - Flutter (from `Flutter`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - local_auth (from `.symlinks/plugins/local_auth/ios`)
+  - package_info (from `.symlinks/plugins/package_info/ios`)
+  - SwCrypt
+
+SPEC REPOS:
+  trunk:
+    - CryptoSwift
+    - SwCrypt
+    - Toast
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  local_auth:
+    :path: ".symlinks/plugins/local_auth/ios"
+  package_info:
+    :path: ".symlinks/plugins/package_info/ios"
+
+SPEC CHECKSUMS:
+  CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
+  local_auth: 25938960984c3a7f6e3253e3f8d962fdd16852bd
+  package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
+  SwCrypt: 0d1f951b8a993d6e107f4776ee0d72c1adafd1df
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: e96657b35cdd24a75fcbdc40d625a22db0733baf
+
+COCOAPODS: 1.11.2
